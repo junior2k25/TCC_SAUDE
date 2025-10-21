@@ -1,5 +1,6 @@
-section{
-    font-family: 'Poppins', sans-serif;
+
+section {
+  font-family: 'Poppins', sans-serif;
 }
 
 .inicio-container {
@@ -33,7 +34,7 @@ section{
 .main-agenda {
   flex: 1;
   text-align: left;
-  color: #0077b6; 
+  color: #2FA4D8; 
 
   h1 {
     font-size: 48px; 
@@ -51,7 +52,7 @@ section{
   }
 
   .btn-agendar-main {
-    background-color: #0077b6;
+    background-color: #2FA4D8;
     color: #fff;
     font-weight: 700;
     border: none;
@@ -67,38 +68,40 @@ section{
     }
   }
 }
-.qualidade-saude {
+
+
+.onda-separadora {
   position: relative;
-  background-color: #fde7d9;
-  padding-top: 0;
-  margin-top: 60px;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin-top: -80px; 
+  z-index: 1;
 
-  .onda-separadora {
-    position: absolute;
-    top: -120px;
+  svg {
+    display: block;
     width: 100%;
-    overflow: hidden;
-
-    svg {
-      display: block;
-      width: calc(130% + 1.3px);
-      height: 120px;
-    }
+    height: 220px; 
+    position: relative;
   }
 
-  .qualidade-conteudo {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 120px 60px 80px;
+  path {
+    fill: #fde7d9;
+  }
+}
 
-    h2 {
-      color: #0077b6;
-      font-weight: 600;
-      font-size: 24px;
-      margin-bottom: 60px;
-      line-height: 1.4;
-    }
+.qualidade-saude {
+  background-color: #fde7d9;
+  padding: 100px 60px 80px;
+  text-align: center;
+
+  h2 {
+    font-family: 'Preahvihear', sans-serif;
+    color: #2FA4D8;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 60px;
+    line-height: 1.4;
   }
 
   .qualidade-grid {
@@ -109,24 +112,18 @@ section{
     gap: 40px;
   }
 
-  .qualidade-imagem {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-
-    img {
-      max-width: 620px;
-      border-radius: 16px;
-    }
+  .qualidade-imagem img {
+    max-width: 620px;
+    border-radius: 16px;
   }
 
   .qualidade-cards {
-    flex: 1;
     display: grid;
     gap: 20px;
     justify-items: center;
   }
+
+  /* ----------- SEÇÃO DOS CARDS RESTAURADA ----------- */
 
   .calend {
     background: #FFF6F5;
@@ -210,6 +207,7 @@ section{
       line-height: 1.3;
     }
   }
+
   .card {
     background: #FDFCFF;
     border-radius: 12px;
@@ -244,5 +242,3 @@ section{
     width: 490px;
   }
 }
-
-

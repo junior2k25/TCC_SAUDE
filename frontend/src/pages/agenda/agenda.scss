@@ -1,0 +1,140 @@
+.agenda-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F4FBFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agenda-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 170px; 
+  padding: 60px 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.agenda-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  
+
+  img {
+    width: 440px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.agenda-formulario {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.agenda-formulario h2 {
+  font-family: "Preahvihear", sans-serif;
+  font-size: 28px;
+  color: #2FA4D8;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.agenda-formulario p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.agenda-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.agenda-formulario label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.agenda-formulario input,
+.agenda-formulario select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border 0.3s;
+}
+
+.agenda-formulario input:focus,
+.agenda-formulario select:focus {
+  border-color: #2FA4D8;
+}
+
+
+.form-dupla {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px; 
+
+  div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.agenda-formulario button {
+  background-color: #2FA4D8;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 0;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.agenda-formulario button:hover {
+  background-color: #0c7eb0;
+}
+
+
+@media (max-width: 992px) {
+  .agenda-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .agenda-imagem {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .agenda-imagem img {
+    width: 350px;
+  }
+
+  .agenda-formulario {
+    width: 90%;
+    padding: 30px 25px;
+  }
+}

@@ -1,7 +1,17 @@
-import { Link } from "react-router";
-import './cabecalho.scss';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./cabecalho.scss";
 
-export default function Header() {
+export default function Cabecalho() {
+  const [menuAberto, setMenuAberto] = useState(false);
+  const navigate = useNavigate();
+
+  function sair() {
+    localStorage.removeItem("TOKEN");
+    localStorage.removeItem("USUARIO");
+    navigate("/login");
+  }
+
   return (
     <header className="header-cabecalho">
       <div className="logo-area-cabecalho">
@@ -10,11 +20,25 @@ export default function Header() {
       </div>
 
       <nav className="nav-cabecalho">
-        <a href="#">Início</a>
-        <a href="#">Contato</a>
-        <a href="#">Sobre Nós</a>
+        <a href="/">Início</a>
+        <a href="/contato">Contato</a>
+        <a href="/sobre">Sobre Nós</a>
       </nav>
 
+      <div
+        className={`menu-icone ${menuAberto ? "ativo" : ""}`}
+        onClick={() => setMenuAberto(!menuAberto)}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      {menuAberto && (
+        <div className="menu-suspenso">
+          <button onClick={sair}>Sair</button>
+        </div>
+      )}
     </header>
-  )
+  );
 }

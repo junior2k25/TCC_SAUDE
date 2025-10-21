@@ -7,7 +7,7 @@
   overflow: hidden;
 
   .cadastro-lado-esquerdo {
-    background-color: #0073A6;
+    background-color: #2FA4D8;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@
 
     h1 {
       font-size: 28px;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 25px;
       color: #000;
     }
@@ -39,7 +39,7 @@
 
       label {
         font-family: 'Arial', sans-serif;
-        font-weight: 600;
+        font-weight: 300;
         margin-bottom: 5px;
       }
 
@@ -55,7 +55,7 @@
       }
 
       button {
-        background-color: #0073A6;
+        background-color: #2FA4D8;
         color: white;
         border: none;
         border-radius: 8px;
@@ -89,7 +89,7 @@
   }
 }
 
-// 📱 Responsivo
+
 @media (max-width: 900px) {
   .cadastro-container {
     flex-direction: column;
