@@ -3,6 +3,9 @@ import "./Agenda.scss";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
 
 export default function Agenda() {
+    const[motivo, setMotivo] = useState('')
+    const[especialidade, setEspecialidade] = useState('')
+   
   return (
     <>
       <Cabecalho />

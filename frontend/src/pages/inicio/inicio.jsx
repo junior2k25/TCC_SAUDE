@@ -72,7 +72,7 @@ export default function Inicio() {
               <div className="card">
                 <img src="/imgcard1.png" />
                 <p>Controle todo seu histórico médico pelo aplicativo</p>
-              </div>
+              </div>  
 
 
               <div className="retorno">
