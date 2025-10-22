@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
 import './Inicio.scss';
 
@@ -34,7 +35,7 @@ export default function Inicio() {
             oferecendo atenção humanizada, experiência comprovada e
             acompanhamento personalizado.
           </p>
-          <button className="btn-agendar-main">AGENDE AQUI</button>
+          <button className="btn-agendar-main"><Link to={'/agenda'}>AGENDE AQUI</Link></button>
         </div>
       </section>
 
