@@ -1,15 +1,20 @@
 import con from '../repository/conection.js';
 
-export async function consultarRepo(idConsulta) {
-    const comando =`
-    insert into tb_agenda (motivo, especialidade, nm_medico, data_consulta, hora)
-    values (?, ?, ?, ?, ?)
+export async function consultarRepo(consulta) {
+    const comando = `
+        INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta  , hora) 
+        VALUES (?, ?, ?, ?, ?)
     `;
-
-    let resposta = await con.query(comando, [idConsulta.motivo, idConsulta.especialidade, idConsulta.nm_medico, idConsulta.data_consulta, idConsulta.hora]);
-    let info = resposta[0];
-
-    return info.insertId;
+    
+    const [resultado] = await con.query(comando, [
+        consulta.motivo,
+        consulta.especialidade,
+        consulta.medico,      
+        consulta.data,
+        consulta.hora         
+    ]);
+    
+    return resultado.insertId;
 }
 
 export async function listarConsultas() {
@@ -18,6 +23,4 @@ export async function listarConsultas() {
     where id_consulta = ?
     `
 }
-
-
 
