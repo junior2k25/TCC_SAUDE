@@ -1,8 +1,9 @@
 import con from '../repository/conection.js';
 
+// Inserir consulta
 export async function inserirConsulta(consulta) {
     const comando = `
-        INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta  , hora , hospital) 
+        INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta, hora, hospital) 
         VALUES (?, ?, ?, ?, ?, ?)
     `;
     
@@ -18,10 +19,21 @@ export async function inserirConsulta(consulta) {
     return resultado.insertId;
 }
 
+// 🔹 Novo método GET — listar consultas
 export async function listarConsultas() {
-    const comando = `select id_consulta, motivo, especialidade, nm_medico, data_consulta, hora
-    from tb_consulta
-    where id_consulta = ?
-    `
-}
+    const comando = `
+        SELECT 
+            id_consulta AS id,
+            motivo,
+            especialidade,
+            nm_medico AS medico,
+            data_consulta AS data,
+            hora,
+            hospital
+        FROM tb_agenda
+        ORDER BY id_consulta DESC
+    `;
 
+    const [linhas] = await con.query(comando);
+    return linhas;
+}

@@ -7,22 +7,19 @@ endpoints.post('/inserir', async (req, resp) => {
     try {
         let idConsulta = req.body;
         let id = await db.inserirConsulta(idConsulta);
-
         resp.send({ novoId: id });
-    }
-    catch (err) {
+    } catch (err) {
         resp.status(400).send({ erro: err.message });
     }
 });
 
-endpoints.get('/agenda', async (req, resp) =>{
-     let info = await db.listarConsultas(info)
-     resp.send(info)
-})
-
-
-
+endpoints.get('/consultas', async (req, resp) => {
+    try {
+        const consultas = await db.listarConsultas();
+        resp.send(consultas);
+    } catch (err) {
+        resp.status(400).send({ erro: err.message });
+    }
+});
 
 export default endpoints;
-
-

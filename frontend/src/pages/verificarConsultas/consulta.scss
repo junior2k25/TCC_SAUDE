@@ -1,1 +1,97 @@
-     
+.pagina-consultas {
+  background-color: #eaf7ff;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.area-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 40px;
+}
+
+.imagem-medico {
+  width: 300px;
+  height: auto;
+}
+
+.card-consulta {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 420px;
+}
+
+.card-consulta h2 {
+  color: #2b90d9;
+  margin-bottom: 8px;
+}
+
+.card-consulta p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.formulario-consulta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+}
+
+.formulario-consulta input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.botao-verificar {
+  margin-top: 15px;
+  background-color: #2b90d9;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease-in-out;
+}
+
+.botao-verificar:hover {
+  background-color: #1c7bc2;
+}
+
+.tabela-consultas {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.tabela-consultas table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela-consultas th {
+  background: #2b90d9;
+  color: white;
+  padding: 10px;
+}
+
+.tabela-consultas td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
