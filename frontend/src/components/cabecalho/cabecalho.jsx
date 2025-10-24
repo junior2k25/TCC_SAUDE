@@ -20,8 +20,8 @@ export default function Cabecalho() {
       </div>
 
       <nav className="nav-cabecalho">
+        <a href="/blogs">Blogs</a>
         <a href="/">Início</a>
-        <a href="/contato">Contato</a>
         <a href="/sobre">Sobre Nós</a>
       </nav>
 
