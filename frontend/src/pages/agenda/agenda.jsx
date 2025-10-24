@@ -5,27 +5,28 @@ import api from "../../api";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
 
 export default function Agenda() {
-    const[motivo, setMotivo] = useState('')
-    const[especialidade, setEspecialidade] = useState('')
-    const[medico, setMedico] = useState('')
-    const[data, setData] = useState('')
-    const[hora, setHora] = useState('')
+  const [motivo, setMotivo] = useState('')
+  const [especialidade, setEspecialidade] = useState('')
+  const [medico, setMedico] = useState('')
+  const [data, setData] = useState('')
+  const [hora, setHora] = useState('')
+  const [hospital, setHospital] = useState('')
 
-    async function agendarConsulta(e) {
-        e.preventDefault();
+  async function agendarConsulta(e) {
+    e.preventDefault();
 
-        try {
-            const body = { motivo, especialidade, medico, data, hora };
-            await api.post('/consultar', body);
+    try {
+      const body = { motivo, especialidade, medico, data, hora, hospital };
+      await api.post('/inserir', body);
 
-            alert("Consulta agendada com sucesso!");
-        } catch (err) {
-            alert("Erro ao agendar consulta: " + err.response?.data?.erro);
-        }
-    } 
+      alert("Consulta agendada com sucesso!");
+    } catch (err) {
+      alert("Erro ao agendar consulta: " + err.response?.data?.erro);
+    }
+  }
 
 
-   
+
   return (
     <>
       <Cabecalho />
@@ -59,8 +60,9 @@ export default function Agenda() {
                 <div>
                   <label htmlFor="medico">Selecione o médico</label>
                   <select id="medico" value={medico} onChange={(e) => setMedico(e.target.value)}>
-                    <option value="Dr. João Silva">Dr. João Silva</option>
+                     <option value="Dr. João Silva">Dr. João Silva</option>
                     <option value="Dra. Maria Lima">Dra. Maria Lima</option>
+                    <option value="Dr. Sergio Ramalho Junior">Dr. Sergio Ramalho Junior</option>
                   </select>
                 </div>
               </div>
@@ -73,13 +75,21 @@ export default function Agenda() {
 
                 <div>
                   <label htmlFor="hora">Horário disponível</label>
-                  <select id="hora" value={hora} onChange={(e) => setHora(e.target.value)}>
-                    <option value="9:00">9:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00">11:00</option>
-                  </select>
+                  <input type="time" value={hora} onChange={(e) => setHora(e.target.value)} />
+
+
                 </div>
               </div>
+
+
+              <label htmlFor="Hospital">Selecione o Hospital</label>
+              <select type="text" id="Hospital" required value={hospital} onChange={(e) => setHospital(e.target.value)} >
+                <option value="Hospital São Paulo">Hospital São Paulo</option>
+                <option value="Hospital Geral Grajaú">Hospital Geral Grajaú</option>
+                <option value="Hospital Municipal Integrado Santo Amaro">Hospital Municipal Integrado Santo Amaro</option>
+
+              </select>
+
 
               <button type="button" onClick={agendarConsulta}>Agendar Consulta</button>
             </form>

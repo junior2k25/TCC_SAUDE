@@ -4,6 +4,8 @@ import Cadastro from "./pages/cadastro/Index";
 import Login from "./pages/login/login";
 import Agenda from "./pages/agenda/agenda";
 import Sobre from "./pages/sobre/sobre";
+import Consulta from "./pages/verificarConsultas/consulta";
+
 
 export default function Navegacao(){
     return(
@@ -14,6 +16,7 @@ export default function Navegacao(){
                 <Route path="/login" element={<Login/>}/>
                  <Route path="/agenda" element={<Agenda/>}/>
                  <Route path="/sobre" element={<Sobre/>}/>
+                 <Route path="/consulta" element={<Consulta/>}/>
             </Routes>
         </BrowserRouter>
     )

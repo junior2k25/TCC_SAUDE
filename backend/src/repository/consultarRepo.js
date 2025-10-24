@@ -1,9 +1,9 @@
 import con from '../repository/conection.js';
 
-export async function consultarRepo(consulta) {
+export async function inserirConsulta(consulta) {
     const comando = `
-        INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta  , hora) 
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta  , hora , hospital) 
+        VALUES (?, ?, ?, ?, ?, ?)
     `;
     
     const [resultado] = await con.query(comando, [
@@ -11,7 +11,8 @@ export async function consultarRepo(consulta) {
         consulta.especialidade,
         consulta.medico,      
         consulta.data,
-        consulta.hora         
+        consulta.hora,
+        consulta.hospital
     ]);
     
     return resultado.insertId;
