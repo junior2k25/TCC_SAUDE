@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../../api";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
 import "./consulta.scss";
+import Rodape from "../../components/rodape/rodape";
 
 export default function ListaConsultas() {
   const [consultas, setConsultas] = useState([]);
@@ -119,6 +120,7 @@ export default function ListaConsultas() {
           </table>
         </div>
       )}
+      < Rodape />
     </div>
   );
 }

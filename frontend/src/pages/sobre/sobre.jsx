@@ -1,4 +1,5 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Rodape from "../../components/rodape/rodape";
 import './sobre.scss';
 
 export default function Sobre() {
@@ -69,6 +70,8 @@ export default function Sobre() {
           </div>
         </div>
       </section>
+
+      < Rodape />
     </div>
   );
 }

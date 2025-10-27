@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Rodape from "../../components/rodape/rodape";
 import './Inicio.scss';
 
 export default function Inicio() {
@@ -102,6 +103,8 @@ export default function Inicio() {
 
 
       </section>
+
+      < Rodape />
     </div>
   );
 }

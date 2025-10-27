@@ -3,6 +3,7 @@ import "./Agenda.scss";
 import { useState } from "react";
 import api from "../../api";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Rodape from "../../components/rodape/rodape";
 
 export default function Agenda() {
   const [motivo, setMotivo] = useState('')
@@ -98,6 +99,8 @@ export default function Agenda() {
           </div>
         </div>
       </section>
+
+      < Rodape />
     </>
   );
 }
