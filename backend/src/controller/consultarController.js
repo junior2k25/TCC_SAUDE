@@ -15,7 +15,7 @@ endpoints.post('/inserir', async (req, resp) => {
 
 endpoints.get('/consultas', async (req, resp) => {
   try {
-    const idUsuario = req.query.idUsuario; // exemplo: /consultas?idUsuario=2
+    const idUsuario = req.query.idUsuario; 
     const consultas = await db.listarConsultasPorUsuario(idUsuario);
     resp.send(consultas);
   } catch (err) {

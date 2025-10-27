@@ -5,6 +5,7 @@ import Login from "./pages/login/login";
 import Agenda from "./pages/agenda/agenda";
 import Sobre from "./pages/sobre/sobre";
 import Consulta from "./pages/verificarConsultas/consulta";
+import Blogs from "./pages/blogs/blog";
 
 
 export default function Navegacao(){
@@ -17,6 +18,7 @@ export default function Navegacao(){
                  <Route path="/agenda" element={<Agenda/>}/>
                  <Route path="/sobre" element={<Sobre/>}/>
                  <Route path="/consulta" element={<Consulta/>}/>
+                 <Route path="/blogs" element={<Blogs/>}/>
             </Routes>
         </BrowserRouter>
     )

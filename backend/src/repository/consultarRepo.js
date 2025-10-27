@@ -1,6 +1,6 @@
 import con from '../repository/conection.js';
 
-// Inserir consulta
+
 export async function inserirConsulta(consulta) {
   const comando = `
     INSERT INTO tb_agenda (motivo, especialidade, nm_medico, data_consulta, hora, hospital, id_usuario) 
