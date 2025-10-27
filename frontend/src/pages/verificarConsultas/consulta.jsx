@@ -5,11 +5,31 @@ import "./consulta.scss";
 
 export default function ListaConsultas() {
   const [consultas, setConsultas] = useState([]);
+  const [motivo, setMotivo] = useState("");
+  const [especialidade, setEspecialidade] = useState("");
+  const [medico, setMedico] = useState("");
+  const [data, setData] = useState("");
+  const [hora, setHora] = useState("");
+  const [hospital, setHospital] = useState("");
 
   async function carregarConsultas() {
     try {
-      const resp = await api.get("/consultas");
-      setConsultas(resp.data);
+      const id_usuario = localStorage.getItem("ID_USUARIO");
+      const resp = await api.get(`/consultas?idUsuario=${id_usuario}`);
+
+      const lista = resp.data;
+      setConsultas(lista);
+
+      
+      if (lista.length > 0) {
+        const consulta = lista[0]; 
+        setMotivo(consulta.motivo);
+        setEspecialidade(consulta.especialidade);
+        setMedico(consulta.medico);
+        setData(consulta.data);
+        setHora(consulta.hora);
+        setHospital(consulta.hospital);
+      }
     } catch (err) {
       alert("Erro ao carregar consultas: " + err.message);
     }
@@ -20,7 +40,11 @@ export default function ListaConsultas() {
       <Cabecalho />
 
       <div className="area-principal">
-        <img src='/medico-consulta.webp' alt="Médico" className="imagem-medico" />
+        <img
+          src="/medico-consulta.webp"
+          alt="Médico"
+          className="imagem-medico"
+        />
 
         <div className="card-consulta">
           <h2>Consultas do Cliente</h2>
@@ -30,16 +54,32 @@ export default function ListaConsultas() {
           </p>
 
           <div className="formulario-consulta">
-            <input type="text" placeholder="Motivo da consulta" />
+            <input
+              placeholder="Motivo da consulta"
+              value={motivo}
+              onChange={(e) => setMotivo(e.target.value)}
+            />
             <div className="linha">
-              <input type="text" placeholder="Especialidade" />
-              <input type="text" placeholder="Médico" />
+              <input
+                placeholder="Especialidade"
+                value={especialidade}
+                onChange={(e) => setEspecialidade(e.target.value)}
+              />
+              <input
+                placeholder="Médico"
+                value={medico}
+                onChange={(e) => setMedico(e.target.value)}
+              />
             </div>
             <div className="linha">
-              <input type="date" />
-              <input type="time" />
+              <input value={data} onChange={(e) => setData(e.target.value)} />
+              <input value={hora} onChange={(e) => setHora(e.target.value)} />
             </div>
-            <input type="text" placeholder="Hospital da consulta" />
+            <input
+              placeholder="Hospital da consulta"
+              value={hospital}
+              onChange={(e) => setHospital(e.target.value)}
+            />
           </div>
 
           <button onClick={carregarConsultas} className="botao-verificar">
@@ -50,11 +90,11 @@ export default function ListaConsultas() {
 
       {consultas.length > 0 && (
         <div className="tabela-consultas">
-          <h3>Consultas Marcadas</h3>
+          <h3>Sua Consultas Marcadas</h3>
           <table>
             <thead>
               <tr>
-                <th>ID</th>
+               
                 <th>Motivo</th>
                 <th>Especialidade</th>
                 <th>Médico</th>
@@ -66,7 +106,7 @@ export default function ListaConsultas() {
             <tbody>
               {consultas.map((item) => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
+                  
                   <td>{item.motivo}</td>
                   <td>{item.especialidade}</td>
                   <td>{item.medico}</td>

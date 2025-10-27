@@ -16,6 +16,8 @@ especialidade varchar (200),
 nm_medico varchar (200),
 data_consulta varchar (200),
 hora varchar (200),
-hospital varchar (200)
+hospital varchar (200),
+id_usuario int,
+foreign key (id_usuario) references tb_usuario(id_usuario)
 );
 

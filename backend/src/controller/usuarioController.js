@@ -30,7 +30,10 @@ endpoints.post('/login', async (req, resp) => {
     let token = gerarToken(usuario);
 
     resp.send({
-      usuario,
+      usuario: {
+    id: usuario.id_usuario,      
+    email: usuario.email
+      },
       token
     });
   }

@@ -14,12 +14,14 @@ endpoints.post('/inserir', async (req, resp) => {
 });
 
 endpoints.get('/consultas', async (req, resp) => {
-    try {
-        const consultas = await db.listarConsultas();
-        resp.send(consultas);
-    } catch (err) {
-        resp.status(400).send({ erro: err.message });
-    }
+  try {
+    const idUsuario = req.query.idUsuario; // exemplo: /consultas?idUsuario=2
+    const consultas = await db.listarConsultasPorUsuario(idUsuario);
+    resp.send(consultas);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
 });
+
 
 export default endpoints;

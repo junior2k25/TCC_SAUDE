@@ -13,17 +13,19 @@ export default function Agenda() {
   const [hospital, setHospital] = useState('')
 
   async function agendarConsulta(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const body = { motivo, especialidade, medico, data, hora, hospital };
-      await api.post('/inserir', body);
+  try {
+    const id_usuario = localStorage.getItem("ID_USUARIO"); // 🔹 pega o id salvo
+    const body = { motivo, especialidade, medico, data, hora, hospital, id_usuario };
 
-      alert("Consulta agendada com sucesso!");
-    } catch (err) {
-      alert("Erro ao agendar consulta: " + err.response?.data?.erro);
-    }
+    await api.post('/inserir', body);
+
+    alert("Consulta agendada com sucesso!");
+  } catch (err) {
+    alert("Erro ao agendar consulta: " + err.response?.data?.erro);
   }
+}
 
 
 

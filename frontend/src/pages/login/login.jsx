@@ -8,7 +8,6 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-  // Se o usuário já estiver logado, manda direto para o início
   useEffect(() => {
     const usuario = localStorage.getItem("USUARIO");
     const token = localStorage.getItem("TOKEN");
@@ -27,10 +26,12 @@ export default function Login() {
 
       const token = resp.data.token;
       const usuario = resp.data.usuario.email;
+      const usuarioi = resp.data.usuario;
+      
 
-      localStorage.setItem('TOKEN', token);
-      localStorage.setItem('USUARIO', usuario);
-
+      localStorage.setItem('TOKEN', resp.data.token);
+      localStorage.setItem('USUARIO', usuario.email);
+      localStorage.setItem('ID_USUARIO', usuarioi.id); 
       navigate('/');
     } catch (err) {
       alert('Cpf ou senha incorretos');
