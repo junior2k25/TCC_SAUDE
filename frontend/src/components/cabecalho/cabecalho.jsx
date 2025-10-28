@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./cabecalho.scss";
 
 export default function Cabecalho() {
@@ -15,7 +16,9 @@ export default function Cabecalho() {
   return (
     <header className="header-cabecalho">
       <div className="logo-area-cabecalho">
+        <Link to={'/'}>
         <img src="/logo.png" alt="Saúde com Você" className="logo-cabecalho" />
+        </Link>
         <h1>SAÚDE COM VOCÊ</h1>
       </div>
 
