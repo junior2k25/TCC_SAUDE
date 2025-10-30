@@ -100,6 +100,22 @@ export default function Agenda() {
         </div>
       </section>
 
+
+      <div className="onda-separadora">
+        <svg
+          viewBox="0 0 1440 400"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#fde7d9"
+            d="M0,240 C300,400 1140,100 1440,260 L1440,400 L0,400 Z"
+          />
+        </svg>
+      </div>
+
+
+
       < Rodape />
     </>
   );
