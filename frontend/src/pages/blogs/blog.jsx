@@ -1,126 +1,217 @@
-import Cabecalho from "../../components/cabecalho/cabecalho";
-import Rodape from "../../components/rodape/rodape";
+import React from "react";
+import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Rodape from "../../components/rodape/Rodape";
 import "./blog.scss";
 
-export default function Blogs() {
+export default function Blog() {
   return (
-    <>
+    <div className="blog-container-geral">
       <Cabecalho />
-      <div className="blog-container">
-        <main className="blog-container">
-          <section className="intro">
-            <h2>Nosso Blog</h2>
+
+      <main className="blog-container">        <section className="intro alimentacao">
+          <h2 className="titulo-blog">NOSSO BLOG</h2>
+          <div className="it">
+            <h3 className="subtitulo-blog alimentacao-title">Alimentação</h3>
+          </div>
+        </section>
+
+        <section className="post verde">
+          <img
+            src="/public/alimentacao-saudavel-dia-dia.webp"
+            alt="Comida saudável"
+          />
+          <div className="post-content">
             <p>
-              Confira nossas dicas de bem-estar, alimentação e qualidade de
-              vida!
+              Adotar uma alimentação saudável no dia a dia não significa fazer
+              dietas restritivas, mas sim criar hábitos conscientes e
+              equilibrados. Incluir mais frutas, verduras, legumes e alimentos
+              naturais nas refeições, manter-se hidratado e reduzir o consumo de
+              ultraprocessados são passos simples que fortalecem o corpo,
+              aumentam a energia e melhoram o bem-estar físico e mental.
             </p>
-          </section>
+          </div>
+        </section>
 
-          <section className="post destaque azul">
-            <img
-              src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
-              alt="Comida saudável"
-            />
-            <div className="post-content">
-              <h3>Alimentação Saudável</h3>
-              <p>
-                Descubra como uma boa alimentação pode transformar sua saúde e
-                sua disposição no dia a dia.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
+        <section className="post azul">
+          <img
+            src="/public/probioticos-o-que-sao-e-seus-beneficios-para-a-saude-intestinal-510x392.webp"
+            alt="Probióticos"
+          />
+          <div className="post-content">
+            <h3>
+              Entenda o que são probióticos e seus benefícios para a saúde
+              intestinal
+            </h3>
+            <p>
+              Probióticos são microrganismos que habitam nosso sistema digestivo
+              e fazem parte do nosso microbioma intestinal. Sejam fungos ou
+              bactérias, eles […]
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
 
-          <section className="post amarelo">
-            <img
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
-              alt="Refeição colorida"
-            />
-            <div className="post-content">
-              <h3>Receitas Leves e Nutritivas</h3>
-              <p>
-                Aprenda receitas simples e saudáveis para manter uma alimentação
-                equilibrada e saborosa.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
+        <section className="post amarelo">
+          <img src="/public/prato-colorido-refeicao.webp" alt="Prato colorido" />
+          <div className="post-content">
+            <h3>11 dicas imperdíveis para ter uma alimentação equilibrada</h3>
+            <p>
+              Mas afinal, o que é uma alimentação equilibrada e saudável? Como
+              manter esses cuidados no dia a dia e qual é a importância disso?
+              Pensando em dúvidas como essa, preparamos um texto que tem como
+              objetivo responder aos seus principais questionamentos sobre o
+              assunto.
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
 
-          <section className="post vermelho">
-            <img
-              src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1"
-              alt="Mulher fazendo exercício"
-            />
-            <div className="post-content">
-              <h3>Exercícios Físicos</h3>
-              <p>
-                Saiba como manter seu corpo ativo e melhorar sua saúde física e
-                mental com atividades simples.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
+        <section className="post vermelho">
+          <img src="/public/banana.webp" alt="Banana" />
+          <div className="post-content">
+            <h3>
+              Saiba por que o potássio é essencial <br /> para a saúde
+              cardiovascular:
+            </h3>
+            <p>
+              Quando o assunto é <b>hipertensão</b>, o sódio costuma roubar a
+              cena. Mas existe outro mineral que merece atenção: o potássio. O
+              consumo adequado desse nutriente pode ter um impacto ainda maior
+              na <b>pressão arterial</b> do que apenas reduzir o sal no dia a
+              dia.
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
 
-          <section className="post amarelo">
-            <img
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a"
-              alt="Pessoa correndo"
-            />
-            <div className="post-content">
-              <h3>Importância da Rotina</h3>
-              <p>
-                Descubra o impacto positivo que uma rotina equilibrada pode ter
-                na sua qualidade de vida.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
+ 
 
-          <section className="post azul">
-            <img
-              src="https://images.unsplash.com/photo-1556740749-887f6717d7e4"
-              alt="Relaxamento e meditação"
-            />
-            <div className="post-content">
-              <h3>Saúde Mental</h3>
-              <p>
-                Cuidar da mente é essencial. Veja como pequenas atitudes podem
-                ajudar a manter o equilíbrio emocional.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
+        
+        <section className="intro atividade">
+          <h3 className="subtitulo-blog atividade-title">Atividade Física</h3>
+        </section>
 
-          <section className="post cinza">
-            <img
-              src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528"
-              alt="Dormir bem"
-            />
-            <div className="post-content">
-              <h3>O Poder do Sono</h3>
-              <p>
-                Entenda por que dormir bem é fundamental para o corpo e a mente,
-                e veja dicas para melhorar o descanso.
-              </p>
-              <a href="#" className="btn">
-                Ler mais
-              </a>
-            </div>
-          </section>
-        </main>
+        <section className="post amarelo claro">
+          <img src="/public/atividade-fisica-freepik.webp" alt="Corrida" />
+          <div className="post-content">
+            <h3>A importância da atividade física</h3>
+            <p>
+              Mexer o corpo é essencial para o bem-estar. Praticar exercícios
+              regularmente melhora o humor, aumenta a energia e fortalece o
+              sistema imunológico. Não precisa ser intenso — o importante é se
+              movimentar!
+            </p>
+          </div>
+        </section>
 
-        <Rodape />
-      </div>
-    </>
+        <section className="post azul-claro">
+          <img src="/public/cadeira-extensora-musculos-trabalhados-e-seus-beneficios-510x392.webp" alt="Cadeira extensora" />
+          <div className="post-content">
+            <h3>
+              Cadeira extensora: saiba quais músculos ela trabalha e seus benefícios
+            </h3>
+            <p>
+              A cadeira extensora é um dos aparelhos mais tradicionais das
+              academias e está presente tanto em treinos de iniciantes quanto […]
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
+
+        <section className="post amarelo">
+          <img src="/public/como-incentivar-criancas-adolescentes-atividade-fisica.jpg-510x392.webp" alt="Crianças brincando" />
+          <div className="post-content">
+            <h3>
+              Como incentivar que crianças e adolescentes pratiquem atividade física
+            </h3>
+            <p>
+              Em um mundo cada vez mais digital, as discussões sobre a importância
+              do incentivo às atividades físicas têm ganhado destaque […]
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
+
+        <section className="post roxo">
+          <img src="/public/gettyimages-476612752.webp" alt="Sono" />
+          <div className="post-content">
+            <h3>Sono e recuperação: o descanso também é saúde</h3>
+            <p>
+              Dormir bem é essencial para renovar as energias e manter o corpo
+              equilibrado. O descanso adequado ajuda na recuperação muscular e na
+              saúde mental.
+            </p>
+          </div>
+        </section>
+        <section className="intro dr.responde">
+          <div className="it-dr">
+            <h3 className="subtitulo-blog dr.responde-title"> Dr.Responde </h3>
+          </div>
+        </section>
+
+        <section className="post-cinza">
+          <img
+            src="/public/cigarroeletronico.jpg"
+            alt="Cigarro"
+          />
+          <div className="post-content-dr">
+            <h1 className="cigarro">Cigarro eletrônico faz mal à saúde?</h1>
+            <p>
+            Sim, o uso do cigarro eletrônico, vape, e-cigarro ou qualquer outro nome utilizado para dispositivos eletrônicos para fumar (DEFs) é prejudicial à saúde. 
+            “Não existe um padrão de qualidade ou controle de segurança na fabricação de cigarros eletrônicos. 
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+           
+          </div>
+        </section>
+
+        <section className="post-cinza">
+          <img
+            src="/public/remedios-gestantes-nao-devem-tomar-510x392.webp"
+            alt="Probióticos"
+          />
+          <div className="post-content-dr">
+            <h3 className="gravidez"> Quais remédios as gestantes não devem tomar?</h3>
+            
+           
+            <p>
+            Durante a gravidez, até uma simples dor de cabeça pode gerar dúvidas sobre qual remédio é realmente seguro. 
+            A preocupação faz sentido, já que muitas substâncias atravessam a placenta e chegam ao bebê, podendo afetar seu desenvolvimento. 
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
+
+        <section className="post-cinza">
+          <img src="/public/melatonina.webp" alt="criança dormindo" />
+          <div className="post-content-dr">
+            <h3 className="melatonina">Melatonina: substância afeta a qualidade do sono em crianças</h3>
+            <p>
+            A melatonina tem sido amplamente utilizada como indutor do sono em crianças e adultos, na maioria das vezes — sem acompanhamento profissional. 
+            Isso porque produtos com a substância são vendidos em farmácias como um suplemento, sem a necessidade de prescrição médica.
+            </p>
+            <a href="#" className="btn">
+              Leia mais...
+            </a>
+          </div>
+        </section>
+        <Rodape/>
+      </main>
+    </div>
+    
   );
 }

@@ -22,9 +22,9 @@ export default function Rodape() {
 
           <h3 className="redes-sociais">Siga nossas redes:</h3>
           <div className="icones">
-            <img src="/instagram.png" alt="Instagram" />
-            <img src="/facebook.png" alt="Facebook" />
-            <img src="/linkedinn.png" alt="LinkedIn" />
+            <img src='insta.webp' alt='Instagram' />
+            <img src='logofacepreta.png.webp' alt='Facebook' />
+            <img src='linkdin.webp' alt='LinkedIn' />
           </div>
         </div>
 
