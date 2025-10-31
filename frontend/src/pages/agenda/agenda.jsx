@@ -101,19 +101,106 @@ export default function Agenda() {
       </section>
 
 
-      <div className="onda-separadora">
-        <svg
-          viewBox="0 0 1440 400"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#fde7d9"
-            d="M0,240 C300,400 1140,100 1440,260 L1440,400 L0,400 Z"
-          />
-        </svg>
-      </div>
+<div className="cima">
+      <h1>Hospitais para a sua consulta</h1>
 
+      <section className="endereco">
+        <div className="logo">
+          <img src="/hospitalsp.jpg" height="100px" className="logo" alt="Hospital São Paulo" />
+        </div>
+
+        <div className="escrita">
+          <h2>Hospital São Paulo</h2>
+          <p>
+            Somos um hospital universitário vinculado à Universidade <br />
+            Federal de São Paulo (Unifesp), reconhecido como um dos <br />
+            maiores e mais importantes centros de saúde do Brasil. <br />
+            Nos destacamos pela excelência no atendimento médico- <br />
+            hospitalar, formação de profissionais de saúde e pesquisa <br />
+            científica.
+          </p>
+        </div>
+      </section>
+      <div className="localizacao">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3656.1771466440177!2d-46.644496!3d-23.597979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1761910115654!5m2!1spt-BR!2sbr"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa Hospital São Paulo"
+      ></iframe>
+
+      <div className="hospital">
+        <p>
+          <strong>Funcionamento:</strong><br />
+          Unidade de pronto-atendimento e urgência 24 horas.
+        </p>
+
+        <p>
+          <strong>Visitação:</strong><br />
+          Enfermarias: diariamente das 14h às 20h; UTI adulto: das 11h às 12h e das 17h às 18h.
+        </p>
+
+        <p>
+          <strong>Endereço:</strong><br />
+          Rua Napoleão de Barros, 715 – Vila Clementino, São Paulo – SP, CEP 04024-002.
+        </p>
+      </div>
+      
+    </div>
+</div>
+
+
+
+
+<div className="graja">
+      <h1>Hospital Geral Grajaú</h1>
+
+      <section className="endereco">
+        <div className="logo">
+          <img src="/hospitalsp.jpg" height="100px" className="logo" alt="Hospital São Paulo" />
+        </div>
+
+        <div className="escrita">
+          <h2>Hospital São Paulo</h2>
+          <p>
+            Somos um hospital universitário vinculado à Universidade <br />
+            Federal de São Paulo (Unifesp), reconhecido como um dos <br />
+            maiores e mais importantes centros de saúde do Brasil. <br />
+            Nos destacamos pela excelência no atendimento médico- <br />
+            hospitalar, formação de profissionais de saúde e pesquisa <br />
+            científica.
+          </p>
+        </div>
+      </section>
+      <div className="localizacao">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3656.1771466440177!2d-46.644496!3d-23.597979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1761910115654!5m2!1spt-BR!2sbr"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa Hospital São Paulo"
+      ></iframe>
+
+      <div className="hospital">
+        <p>
+          <strong>Funcionamento:</strong><br />
+          Unidade de pronto-atendimento e urgência 24 horas.
+        </p>
+
+        <p>
+          <strong>Visitação:</strong><br />
+          Enfermarias: diariamente das 14h às 20h; UTI adulto: das 11h às 12h e das 17h às 18h.
+        </p>
+
+        <p>
+          <strong>Endereço:</strong><br />
+          Rua Napoleão de Barros, 715 – Vila Clementino, São Paulo – SP, CEP 04024-002.
+        </p>
+      </div>
+      
+    </div>
+</div>
 
 
       < Rodape />

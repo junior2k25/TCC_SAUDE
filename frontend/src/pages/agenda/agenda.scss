@@ -1,7 +1,7 @@
 .agenda-section {
   width: 100%;
   min-height: 100vh;
-  background-color: #f4f8fb;
+  background-color: #F4FBFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,31 +117,118 @@
   background-color: #0c7eb0;
 }
 
-.onda-separadora {
-  position: relative;
+.cima {
   width: 100%;
-  line-height: 0;
-  overflow: hidden;
-  margin-top: -80px;
-  z-index: 1;
+  background-color: #F4FBFF;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 20px;
+}
 
-  svg {
-    display: block;
-    width: 100%;
-    height: 220px;
-    position: relative;
+.endereco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 20px;
 
-    @media (max-width: 768px) {
-      height: 160px;
-    }
 
-    @media (max-width: 480px) {
-      height: 100px;
-    }
+}
+
+
+
+.escrita {
+  flex: 1;
+  text-align: left;
+  color: #2FA4D8;
+
+}
+
+.logo{
+  width: 320px;
+  height: 200px;
+  margin: 20px;
+  border: #333;
+  border-radius: 5px;
+}
+
+h1{
+  color: #2FA4D8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h2{
+  color: #666666;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+p{
+  color: #666666;
+ margin-top: 20px;
+}
+
+
+
+
+.localizacao {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.localizacao iframe {
+  width: 340px;
+  height: 200px;
+  border-radius: 10px;
+  margin-right: 20px;
+  border: none;
+}
+
+.hospital {
+  max-width: 650px;
+  color: #333;
+  font-size: 14px;
+left: 20px;
+}
+
+.hospital p {
+  margin-bottom: 10px;
+  font-size: 15px;
+ 
+}
+
+.hospital strong {
+  color: #666666;
+
+}
+
+
+.graja{
+  background-color: #e6e6e6;
+  h1{
+    color: #666666;
   }
 
-  path {
-    fill: #E6F6FA;
+  img{
+    width: 340px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 30px;
+
+  }
+
+  p{
+
+
   }
 }
 
