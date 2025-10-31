@@ -1,6 +1,5 @@
-import React from "react";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
-import Rodape from "../../components/rodape/Rodape";
+import Rodape from "../../components/rodape/rodape";
 import "./blog.scss";
 
 export default function Blog() {
@@ -8,7 +7,8 @@ export default function Blog() {
     <div className="blog-container-geral">
       <Cabecalho />
 
-      <main className="blog-container">        <section className="intro alimentacao">
+      <main className="blog-container">
+        <section className="intro alimentacao">
           <h2 className="titulo-blog">NOSSO BLOG</h2>
           <div className="it">
             <h3 className="subtitulo-blog alimentacao-title">Alimentação</h3>
@@ -90,14 +90,11 @@ export default function Blog() {
           </div>
         </section>
 
- 
-
-        
         <section className="intro atividade">
           <h3 className="subtitulo-blog atividade-title">Atividade Física</h3>
         </section>
 
-        <section className="post amarelo claro">
+        <section className="post amarelo-claro">
           <img src="/public/atividade-fisica-freepik.webp" alt="Corrida" />
           <div className="post-content">
             <h3>A importância da atividade física</h3>
@@ -111,10 +108,14 @@ export default function Blog() {
         </section>
 
         <section className="post azul-claro">
-          <img src="/public/cadeira-extensora-musculos-trabalhados-e-seus-beneficios-510x392.webp" alt="Cadeira extensora" />
+          <img
+            src="/public/cadeira-extensora-musculos-trabalhados-e-seus-beneficios-510x392.webp"
+            alt="Cadeira extensora"
+          />
           <div className="post-content">
             <h3>
-              Cadeira extensora: saiba quais músculos ela trabalha e seus benefícios
+              Cadeira extensora: saiba quais músculos ela trabalha e seus
+              benefícios
             </h3>
             <p>
               A cadeira extensora é um dos aparelhos mais tradicionais das
@@ -127,14 +128,19 @@ export default function Blog() {
         </section>
 
         <section className="post amarelo">
-          <img src="/public/como-incentivar-criancas-adolescentes-atividade-fisica.jpg-510x392.webp" alt="Crianças brincando" />
+          <img
+            src="/public/como-incentivar-criancas-adolescentes-atividade-fisica.jpg-510x392.webp"
+            alt="Crianças brincando"
+          />
           <div className="post-content">
             <h3>
-              Como incentivar que crianças e adolescentes pratiquem atividade física
+              Como incentivar que crianças e adolescentes pratiquem atividade
+              física
             </h3>
             <p>
-              Em um mundo cada vez mais digital, as discussões sobre a importância
-              do incentivo às atividades físicas têm ganhado destaque […]
+              Em um mundo cada vez mais digital, as discussões sobre a
+              importância do incentivo às atividades físicas têm ganhado
+              destaque […]
             </p>
             <a href="#" className="btn">
               Leia mais...
@@ -153,42 +159,42 @@ export default function Blog() {
             </p>
           </div>
         </section>
-        <section className="intro dr.responde">
+
+        <section className="intro dr-responde">
           <div className="it-dr">
-            <h3 className="subtitulo-blog dr.responde-title"> Dr.Responde </h3>
+            <h3 className="subtitulo-blog dr-responde-title">Dr. Responde</h3>
           </div>
         </section>
 
         <section className="post-cinza">
-          <img
-            src="/public/cigarroeletronico.jpg"
-            alt="Cigarro"
-          />
+          <img src="/public/cigarroeletronico.jpg" alt="Cigarro" />
           <div className="post-content-dr">
             <h1 className="cigarro">Cigarro eletrônico faz mal à saúde?</h1>
             <p>
-            Sim, o uso do cigarro eletrônico, vape, e-cigarro ou qualquer outro nome utilizado para dispositivos eletrônicos para fumar (DEFs) é prejudicial à saúde. 
-            “Não existe um padrão de qualidade ou controle de segurança na fabricação de cigarros eletrônicos. 
+              Sim, o uso do cigarro eletrônico, vape, e-cigarro ou qualquer outro
+              nome utilizado para dispositivos eletrônicos para fumar (DEFs) é
+              prejudicial à saúde. Não existe um padrão de qualidade ou controle
+              de segurança na fabricação desses produtos.
             </p>
             <a href="#" className="btn">
               Leia mais...
             </a>
-           
           </div>
         </section>
 
         <section className="post-cinza">
           <img
             src="/public/remedios-gestantes-nao-devem-tomar-510x392.webp"
-            alt="Probióticos"
+            alt="Gestantes"
           />
           <div className="post-content-dr">
-            <h3 className="gravidez"> Quais remédios as gestantes não devem tomar?</h3>
-            
-           
+            <h3 className="gravidez">
+              Quais remédios as gestantes não devem tomar?
+            </h3>
             <p>
-            Durante a gravidez, até uma simples dor de cabeça pode gerar dúvidas sobre qual remédio é realmente seguro. 
-            A preocupação faz sentido, já que muitas substâncias atravessam a placenta e chegam ao bebê, podendo afetar seu desenvolvimento. 
+              Durante a gravidez, até uma simples dor de cabeça pode gerar
+              dúvidas sobre qual remédio é realmente seguro. Muitas substâncias
+              atravessam a placenta e podem afetar o desenvolvimento do bebê.
             </p>
             <a href="#" className="btn">
               Leia mais...
@@ -199,19 +205,21 @@ export default function Blog() {
         <section className="post-cinza">
           <img src="/public/melatonina.webp" alt="criança dormindo" />
           <div className="post-content-dr">
-            <h3 className="melatonina">Melatonina: substância afeta a qualidade do sono em crianças</h3>
+            <h3 className="melatonina">
+              Melatonina: substância afeta a qualidade do sono em crianças
+            </h3>
             <p>
-            A melatonina tem sido amplamente utilizada como indutor do sono em crianças e adultos, na maioria das vezes — sem acompanhamento profissional. 
-            Isso porque produtos com a substância são vendidos em farmácias como um suplemento, sem a necessidade de prescrição médica.
+              A melatonina tem sido amplamente utilizada como indutor do sono em
+              crianças e adultos, muitas vezes sem acompanhamento profissional.
             </p>
             <a href="#" className="btn">
               Leia mais...
             </a>
           </div>
         </section>
-        <Rodape/>
       </main>
+
+      <Rodape/>
     </div>
-    
   );
 }

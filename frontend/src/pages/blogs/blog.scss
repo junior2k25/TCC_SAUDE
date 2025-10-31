@@ -1,41 +1,26 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 html,
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
   width: 100%;
 }
 
+
 .blog-container-geral {
-  background-color: #F4FBFF;
+  background-color: #f4f8fb;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh; 
   font-family: "Poppins", sans-serif;
 }
 
-.inito{
-  margin-top: 50px;
-  color: #2FBFD8;
-}
-.blog-container-geral header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  background-color: #00a8e8;
-  color: white;
-  font-weight: 600;
-}
-
-
 .blog-container {
+  flex: 1; 
   width: 70%;
   max-width: 960px;
   display: flex;
@@ -43,8 +28,12 @@ body {
   gap: 30px;
   margin: 3rem auto;
 }
-.it{
-margin-right: 550px;}
+
+
+.it {
+  margin-right: 550px;
+}
+
 .intro {
   text-align: center;
   margin-bottom: 1rem;
@@ -65,7 +54,6 @@ margin-right: 550px;}
   }
 }
 
-
 .post {
   display: flex;
   align-items: center;
@@ -74,7 +62,8 @@ margin-right: 550px;}
   padding: 22px 28px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease;
-  height: 155px; 
+  height: 155px;
+  background-color: #fff;
 
   &:hover {
     transform: scale(1.01);
@@ -91,7 +80,6 @@ margin-right: 550px;}
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-
 
     h3 {
       font-size: 1rem;
@@ -131,36 +119,12 @@ margin-right: 550px;}
   background-color: #fff5b5;
 }
 
+.amarelo-claro {
+  background-color: #fff7c8;
+}
+
 .vermelho {
   background-color: #ffcdc9;
-}
-
-.onda-separadora {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-  overflow: hidden;
-  z-index: 1;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 180px;
-    position: relative;
-  }
-
-  &.azul path {
-    fill: #d8ebff; 
-  }
-}
-
-.azulzinho {
-  color: #2fbfd8; 
-}
-
-
-.laranja {
-  background-color: #ffe3b4;
 }
 
 .azul-claro {
@@ -172,37 +136,8 @@ margin-right: 550px;}
 }
 
 
-
-@media (max-width: 768px) {
-  .blog-container {
-    width: 90%;
-  }
-
-  .post {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-.post-content-dr{
-  color: #F4FBFF;
-  font-family: "Poppins", sans-serif;
-
-}
-.cigarro{
- color: #000000;
- font-size: 1rem;
-      font-weight: 600; 
-      text-align: center;  
-      margin: 4px;   
-}
-.post-cinza{
-  background-color: #B9B9B9;
+.post-cinza {
+  background-color: #b9b9b9;
   display: flex;
   align-items: center;
   gap: 25px;
@@ -210,18 +145,33 @@ margin-right: 550px;}
   padding: 22px 28px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease;
-  height: 155px; 
+  height: 155px;
 
   &:hover {
     transform: scale(1.01);
   }
-  
+
   img {
     width: 120px;
     height: 120px;
     object-fit: cover;
-      
   }
+
+  .post-content-dr {
+    color: #000;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .cigarro,
+  .gravidez,
+  .melatonina {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 4px 0;
+  }
+
   .btn {
     font-size: 0.85rem;
     font-weight: 600;
@@ -231,39 +181,28 @@ margin-right: 550px;}
     &:hover {
       text-decoration: underline;
     }
-    h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
+  }
+}
 
+
+@media (max-width: 768px) {
+  .blog-container {
+    width: 90%;
+  }
+
+  .post,
+  .post-cinza {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
     }
-  
-    
   }
-  .gravidez{
-    color: #000000;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;  
-  margin: 8px;
+
+  .it {
+    margin-right: 0;
   }
-  
-  .melatonina{
-    color: #000000;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;  
-  margin: 8px;
-  }
- .titulo-dr-responde{
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: #ff0000;
-  margin-bottom: 0.4rem;
-
- 
- }
-
-
- 
 }

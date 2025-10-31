@@ -44,7 +44,7 @@ export default function Rodape() {
           <div className="coluna">
             <h1>Outros</h1>
             <div className="links">
-              <Link to="#">Blog</Link>
+              <Link to="/blogs">Blog</Link>
               <Link to="#">Hospitais Parceiros</Link>
             </div>
           </div>
