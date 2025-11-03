@@ -1,107 +1,120 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Agenda.scss";
-import { useState } from "react";
 import api from "../../api";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
-import Rodape from "../../components/rodape/rodape";
 
 export default function Agenda() {
-  const [motivo, setMotivo] = useState('')
-  const [especialidade, setEspecialidade] = useState('')
-  const [medico, setMedico] = useState('')
-  const [data, setData] = useState('')
-  const [hora, setHora] = useState('')
-  const [hospital, setHospital] = useState('')
+    const [motivo, setMotivo] = useState('');
+    const [especialidade, setEspecialidade] = useState('');
+    const [hospital, setHospital] = useState('');
+    const [medico, setMedico] = useState('');
+    const [listaMedicos, setListaMedicos] = useState([]);
+    const [data, setData] = useState('');
+    const [hora, setHora] = useState('');
 
-  async function agendarConsulta(e) {
-    e.preventDefault();
-
-    try {
-      const id_usuario = localStorage.getItem("ID_USUARIO"); // 🔹 pega o id salvo
-      const body = { motivo, especialidade, medico, data, hora, hospital, id_usuario };
-
-      await api.post('/inserir', body);
-
-      alert("Consulta agendada com sucesso!");
-    } catch (err) {
-      alert("Erro ao agendar consulta: " + err.response?.data?.erro);
+    async function carregarMedicos(idHospital) {
+        try {
+            const resp = await api.get(`/medicos/${idHospital}`);
+            setListaMedicos(resp.data);
+        } catch (err) {
+            alert("Erro ao carregar médicos!");
+        }
     }
-  }
 
+    function selecionarHospital(e) {
+        const id = e.target.value;
+        setHospital(id);
+        carregarMedicos(id); 
+    }
 
+    async function agendarConsulta(e) {
+        e.preventDefault();
 
-  return (
-    <>
-      <Cabecalho />
+        try {
+            const body = { motivo, especialidade, medico, data, hora };
+            await api.post('/consulta', body);
 
-      <section className="agenda-section">
-        <div className="agenda-container">
-          <div className="agenda-imagem">
-            <img src="/medica3.png" alt="Médica" />
-          </div>
+            alert("Consulta agendada com sucesso!");
+        } catch (err) {
+            alert("Erro ao agendar consulta: " + err.response?.data?.erro);
+        }
+    }
 
-          <div className="agenda-formulario">
-            <h2>Agende sua consulta</h2>
-            <p>
-              Preencha os campos abaixo para escolher sua especialidade e confirmar sua consulta com segurança.
-            </p>
+    return (
+        <>
+            <Cabecalho />
 
-            <form action="/Consultar">
-              <label htmlFor="motivo">Informe o motivo da consulta</label>
-              <input type="text" id="motivo" required value={motivo} onChange={(e) => setMotivo(e.target.value)} />
+            <section className="agenda-section">
+                <div className="agenda-container">
+                    <div className="agenda-imagem">
+                        <img src="/medica3.png" alt="Médica" />
+                    </div>
 
-              <div className="form-dupla">
-                <div>
-                  <label htmlFor="especialidade">Especialidade</label>
-                  <select id="especialidade" value={especialidade} onChange={(e) => setEspecialidade(e.target.value)}>
-                    <option>Clínico geral</option>
-                    <option>Cardiologia</option>
-                    <option>Pediatria</option>
-                  </select>
+                    <div className="agenda-formulario">
+                        <h2>Agende sua consulta</h2>
+                        <p>Preencha os campos abaixo para escolher sua especialidade e confirmar sua consulta com segurança.</p>
+
+                        <form>
+                            <label htmlFor="motivo">Informe o motivo da consulta</label>
+                            <input type="text" id="motivo" required value={motivo} onChange={(e) => setMotivo(e.target.value)} />
+
+                            <div className="form-dupla">
+                                <div>
+                                    <label htmlFor="hospital">Selecione o hospital</label>
+                                    <select id="hospital" value={hospital} onChange={selecionarHospital}>
+                                        <option value="">Selecione</option>
+                                        <option value="1">Hospital São Paulo</option>
+                                        <option value="2">Hospital Geral Grajaú</option>
+                                        <option value="3">Hospital Municipal Santo Amaro</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="especialidade">Especialidade</label>
+                                    <select id="especialidade" value={especialidade} onChange={(e) => setEspecialidade(e.target.value)}>
+                                        <option value="">Selecione</option>
+                                        <option>Clínico Geral</option>
+                                        <option>Cardiologia</option>
+                                        <option>Pediatria</option>
+                                        <option>Ortopedia</option>
+                                        <option>Dermatologia</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="form-dupla">
+                                <div>
+                                    <label htmlFor="medico">Selecione o médico</label>
+                                    <select id="medico" value={medico} onChange={(e) => setMedico(e.target.value)}>
+                                        <option value="">Selecione um médico</option>
+                                        {listaMedicos.map(m => (
+                                            <option key={m.id_medico} value={m.id_medico}>
+                                                {m.nome} - {m.especialidade}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="form-dupla">
+                                <div>
+                                    <label htmlFor="data">Data da consulta</label>
+                                    <input type="date" id="data" value={data} onChange={(e) => setData(e.target.value)} />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="hora">Horário disponível</label>
+                                    <input type="time" id="hora" value={hora} onChange={(e) => setHora(e.target.value)} />
+                                </div>
+                            </div>
+
+                            <button type="button" onClick={agendarConsulta}>Agendar Consulta</button>
+                        </form>
+                    </div>
                 </div>
+            </section>
 
-                <div>
-                  <label htmlFor="medico">Selecione o médico</label>
-                  <select id="medico" value={medico} onChange={(e) => setMedico(e.target.value)}>
-                    <option value="Dr. João Silva">Dr. João Silva</option>
-                    <option value="Dra. Maria Lima">Dra. Maria Lima</option>
-                    <option value="Dr. Sergio Ramalho Junior">Dr. Sergio Ramalho Junior</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-dupla">
-                <div>
-                  <label htmlFor="data">Data da consulta</label>
-                  <input type="date" id="data" value={data} onChange={(e) => setData(e.target.value)} />
-                </div>
-
-                <div>
-                  <label htmlFor="hora">Horário disponível</label>
-                  <input type="time" value={hora} onChange={(e) => setHora(e.target.value)} />
-
-
-                </div>
-              </div>
-
-
-              <label htmlFor="Hospital">Selecione o Hospital</label>
-              <select type="text" id="Hospital" required value={hospital} onChange={(e) => setHospital(e.target.value)} >
-                <option value="Hospital São Paulo">Hospital São Paulo</option>
-                <option value="Hospital Geral Grajaú">Hospital Geral Grajaú</option>
-                <option value="Hospital Municipal Integrado Santo Amaro">Hospital Municipal Integrado Santo Amaro</option>
-
-              </select>
-
-
-              <button type="button" onClick={agendarConsulta}>Agendar Consulta</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-
-      <div className="cima">
+             <div className="cima">
         <h1>Hospitais para a sua consulta</h1>
 
         <section className="endereco">
@@ -198,7 +211,7 @@ export default function Agenda() {
 
       <section className="endereco">
         <div className="logo">
-          <img src="/hospitalgj.webp" height="100px" className="logo" alt="Hospital São Paulo" />
+          <img src="/santoamr.webp" height="100px" className="logo" alt="Hospital São Paulo" />
         </div>
 
         <div className="escrita">
@@ -236,12 +249,8 @@ export default function Agenda() {
     Av.Adolfooooo Pinheiro, 339 – Alto da Boa Vista <br />  São Paulo – SP, CEP 04735-000
         </p>
       </div >
-           
+          
     </div >
-
-
-
-    < Rodape />
-    </>
-  );
+        </>
+    );
 }
