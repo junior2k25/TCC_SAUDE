@@ -198,7 +198,7 @@ export default function Agenda() {
 
       <section className="endereco">
         <div className="logo">
-          <img src="/hospitalgj.webp" height="100px" className="logo" alt="Hospital São Paulo" />
+          <img src="/hospitalst.webp" height="100px" className="logo" alt="Hospital São Paulo" />
         </div>
 
         <div className="escrita">
@@ -236,7 +236,7 @@ export default function Agenda() {
     Av.Adolfooooo Pinheiro, 339 – Alto da Boa Vista <br />  São Paulo – SP, CEP 04735-000
         </p>
       </div >
-           
+          
     </div >
 
 

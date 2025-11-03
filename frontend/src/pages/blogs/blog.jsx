@@ -47,7 +47,7 @@ export default function Blog() {
               e fazem parte do nosso microbioma intestinal. Sejam fungos ou
               bactérias, eles […]
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/entenda-o-que-sao-probioticos-e-seus-beneficios-para-a-saude-intestinal/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -64,7 +64,7 @@ export default function Blog() {
               objetivo responder aos seus principais questionamentos sobre o
               assunto.
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/alimentacao-equilibrada/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -84,7 +84,7 @@ export default function Blog() {
               na <b>pressão arterial</b> do que apenas reduzir o sal no dia a
               dia.
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/saiba-por-que-o-potassio-e-essencial-para-a-saude-cardiovascular/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -121,7 +121,7 @@ export default function Blog() {
               A cadeira extensora é um dos aparelhos mais tradicionais das
               academias e está presente tanto em treinos de iniciantes quanto […]
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/cadeira-extensora-saiba-quais-musculos-ela-trabalha-e-seus-beneficios/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -142,7 +142,7 @@ export default function Blog() {
               importância do incentivo às atividades físicas têm ganhado
               destaque […]
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/como-incentivar-que-criancas-e-adolescentes-pratiquem-atividade-fisica/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -153,9 +153,7 @@ export default function Blog() {
           <div className="post-content">
             <h3>Sono e recuperação: o descanso também é saúde</h3>
             <p>
-              Dormir bem é essencial para renovar as energias e manter o corpo
-              equilibrado. O descanso adequado ajuda na recuperação muscular e na
-              saúde mental.
+             Dormir bem é essencial para renovar as energias e manter o corpo equilibrado. Durante o sono, o organismo se recupera, fortalece o sistema imunológico e melhora o humor.  Respeitar o tempo de descanso é cuidar do corpo e da mente.
             </p>
           </div>
         </section>
@@ -176,7 +174,7 @@ export default function Blog() {
               prejudicial à saúde. Não existe um padrão de qualidade ou controle
               de segurança na fabricação desses produtos.
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/cigarro-eletronico-faz-mal-a-saude/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -196,7 +194,7 @@ export default function Blog() {
               dúvidas sobre qual remédio é realmente seguro. Muitas substâncias
               atravessam a placenta e podem afetar o desenvolvimento do bebê.
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/quais-remedios-as-gestantes-nao-devem-tomar/" className="btn">
               Leia mais...
             </a>
           </div>
@@ -212,7 +210,7 @@ export default function Blog() {
               A melatonina tem sido amplamente utilizada como indutor do sono em
               crianças e adultos, muitas vezes sem acompanhamento profissional.
             </p>
-            <a href="#" className="btn">
+            <a href="https://vidasaudavel.einstein.br/melatonina-substancia-afeta-a-qualidade-do-sono-em-criancas/" className="btn">
               Leia mais...
             </a>
           </div>
