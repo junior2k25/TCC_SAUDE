@@ -1,16 +1,13 @@
-import { inserirConsulta, listarConsultaPorId } from '../repository/consultarRepo.js';
 import { Router } from "express";
+import * as db from "../repository/consultarRepo.js";
 
 const endpoints = Router();
 
-endpoints.post('/consulta', async (req, resp) => {
+endpoints.get('/consultas', async (req, resp) => {
     try {
-        let consulta = req.body;
-        let id = await inserirConsulta(consulta); //
-
-        resp.send({ novoId: id });
-    }
-    catch (err) {
+        let registros = await db.listarConsultas();
+        resp.send(registros);
+    } catch (err) {
         resp.status(400).send({ erro: err.message });
     }
 });
@@ -18,13 +15,11 @@ endpoints.post('/consulta', async (req, resp) => {
 endpoints.get('/consulta/:id', async (req, resp) => {
     try {
         let id = req.params.id;
-        let resposta = await listarConsultaPorId(id);
-        resp.send(resposta);
-    }
-    catch (err) {
+        let registro = await db.listarConsultaPorId(id);
+        resp.send(registro);
+    } catch (err) {
         resp.status(400).send({ erro: err.message });
     }
 });
-
 
 export default endpoints;
